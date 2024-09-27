@@ -1,0 +1,10 @@
+<!-- booking/booking_confirmation.html -->
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>Booking Confirmation</h2>
+<p>Studio: {{ booking.studio.name }}</p>
+<p>Start Time: {{ booking.start_time }}</p>
+<p>End Time: {{ booking.end_time }}</p>
+<p>Total Cost: €{{ booking.total_cost }}</p>
+{% endblock %}
