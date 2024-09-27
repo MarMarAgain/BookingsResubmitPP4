@@ -4,18 +4,20 @@
 
 {% block content %}
 <h1 class="mb-4">Available Studios</h1>
+
+<!-- Studio Gallery Section -->
 <div class="row">
     {% for studio in studios %}
-    <div class="col-md-3 mb-4">
-        <div class="card">
+    <div class="col-3 mb-4">
+        <div class="card studio-card">
             <img src="{{ studio.image.url }}" class="card-img-top" alt="{{ studio.title }}">
-            <div class="card-body">
+            <div class="studio-card-body">
                 <h5 class="card-title">{{ studio.title }}</h5>
                 <p class="card-text"><strong>{{ studio.location }}</strong></p>
                 <p class="card-text">{{ studio.description|truncatewords:15 }}</p>
                 <p class="card-text"><strong>Capacity: {{ studio.capacity }} people</strong></p>
                 <p class="card-text"><strong>Price: €{{ studio.hourly_rate }} / hour</strong></p>
-                <a href="{% url 'studio_detail' studio.id %}" class="btn btn-primary">See More</a>
+                <a href="{% url 'studio_detail' studio.id %}" class="btn btn-secondary">View Details</a>
                 <a href="{% url 'book_studio' studio.id %}" class="btn btn-primary">Book Now</a>
             </div>
         </div>
