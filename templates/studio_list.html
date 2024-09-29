@@ -8,7 +8,8 @@
 <!-- Studio Gallery Section -->
 <div class="row">
     {% for studio in studios %}
-    <div class="col-3 mb-4">
+    <!-- Set the column width for different screen sizes -->
+    <div class="col-12 col-sm-6 col-md-4 col-lg-3 mb-4">
         <div class="card studio-card">
             <img src="{{ studio.image.url }}" class="card-img-top" alt="{{ studio.title }}">
             <div class="studio-card-body">

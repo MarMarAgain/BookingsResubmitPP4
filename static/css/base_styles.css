@@ -251,7 +251,40 @@ body {
     .studio-carousel-section .carousel-item img {
         height: 50vh;
     }
+
+    .content-overlay {
+        padding: 10px; /* Reduce padding for mobile */
+        transform: translate(-50%, -40%); /* Adjust vertical centering */
+        width: 90%; /* Make the overlay width responsive */
+    }
+
+    .content-overlay h2 {
+        font-size: 2.5em; /* Smaller heading size for mobile */
+        margin-right: 0; /* Remove right margin for smaller screens */
+    }
+
+    .content-overlay p {
+        font-size: 1.2em; /* Smaller paragraph text size */
+        margin-right: 0; /* Remove right margin for smaller screens */
+    }
+
+    .footer{
+        .footer-left, .footer-right {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .footer-right {
+        margin-top: 20px;
+    }
+
+    .social-icons a {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+    }
 }
+
 
 @media (max-width: 576px) {
     .studio-card-body h3 {
