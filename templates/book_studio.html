@@ -1,15 +1,39 @@
-<!-- booking/book_studio.html -->
 {% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Book Studio: {{ studio.name }}{% endblock %}
+
+{% block extra_css %}
+    <link rel="stylesheet" href="{% static 'css/book_studio.css' %}">
+{% endblock %}
 
 {% block content %}
-<h2>Book Studio: {{ studio.name }}</h2>
+    <section class="container mt-5">
+        <h1 class="mb-4">Book Studio: {{ studio.name }}</h1>
 
-<form method="post">
-    {% csrf_token %}
-    {{ form.as_p }}
-    <button type="submit">Book Now</button>
-</form>
+        <!-- Flex Container for Image and Booking Form -->
+        <div class="d-flex flex-column flex-md-row align-items-start">
+            <!-- Image Container -->
+            <div class="image-container flex-grow-1">
+                <img src="{{ studio.image.url }}" class="img-thumbnail studio-image" alt="{{ studio.name }}">
+            </div>
+
+            <!-- Booking Form -->
+            <div class="form-container flex-grow-1">
+                <form method="post">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <button type="submit" class="btn btn-primary">Book Now</button>
+                </form>
+            </div>
+        </div>
+    </section>
 {% endblock %}
+
+
+
+
+
 
 
 

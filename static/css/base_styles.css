@@ -1,6 +1,6 @@
 /* Base colors and fonts */
 body {
-    font-family: 'Helvetica Neue', Arial, sans-serif;
+    font-family: 'Dark Grotesque', sans-serif;
     background-color: #FAF9F6;
     color: #7B7B7B;
 }
@@ -23,31 +23,20 @@ body {
 }
 
 .navbar-toggler-icon {
-    background-color: #FF5B5B;
+    color: #FF5B5B;
 }
 
-/* Header section */
-.header-section {
-    background-color: #9B2121;
-    color: #FAF9F6;
-    padding: 40px 0;
-    text-align: center;
-}
-
-.header-section h1 {
-    font-size: 36px;
-    font-weight: bold;
-}
-
-.header-section p {
-    font-size: 18px;
+.navbar .nav-link {
+    padding-left: 10px;
+    padding-right: 10px;
+    align-items: end;
 }
 
 /* Studio Carousel Section */
 .studio-carousel-section {
     position: relative;
-    height: calc(100vh - 100px);
-    overflow: auto;
+    height: 67vh; /* Reduced height to two-thirds */
+    overflow: hidden; /* Ensure no overflow */
 }
 
 .studio-carousel-section .carousel-item {
@@ -56,31 +45,43 @@ body {
 
 .studio-carousel-section .carousel-item img {
     object-fit: cover;
-    height: 100vh;
     width: 100%;
+    height: 100%;
+    aspect-ratio: auto 16/9; /* Keep the 16:9 aspect ratio */
 }
 
 /* Overlay content styling */
-.carousel-caption {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    color: #9B2121;
-    text-align: center;
-    z-index: 10; /* Ensure captions are above the carousel images */
+.content-overlay {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: left;
+  color: white;
+  width: 100%;
+  padding: 20px;
+  z-index: 10;
 }
 
-/* Content overlay styling */
-.content-overlay {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 10;
-    text-align: center;
-    color: white;
+.content-overlay h2 {
+  font-size: 4em; /* Adjust the size as needed */
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  margin-bottom: 0.5em;
+    margin-right: 500px;
+  align-self: initial;
 }
+
+.content-overlay p {
+  font-size: 1.5em; /* Adjust the size as needed */
+  font-weight: bold;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
+  margin-top: 0;
+  margin-right: 450px;
+}
+
 
 /* Booking Section */
 .booking-section {
@@ -110,7 +111,7 @@ body {
 
 .studio-card-body h3 {
     font-size: 24px;
-    color: #9B2121;
+    color: white;
     margin-bottom: 15px;
 }
 
@@ -137,16 +138,105 @@ body {
     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
-/* Footer styling */
-footer {
-    background-color: #F4EDE4;
-    padding: 20px 0;
-    text-align: center;
+.btn {
+    background-color: #FF5B5B;
+    color: white !important;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
 }
 
-footer p {
-    color: #7B7B7B;
+.btn:hover {
+    background-color: #9B2121;
 }
+
+/* Footer styles */
+.footer {
+    background-color: #ff6666;
+    padding: 30px;
+    color: #7a1719;
+   margin-top: 50px;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    flex-wrap: wrap;
+}
+
+.footer-left {
+    flex: 1;
+    max-width: 50%;
+}
+
+.footer-right {
+    flex: 1;
+    max-width: 50%;
+    text-align: right;
+}
+
+.footer-logo {
+    color: #f1e5e5;
+    font-size: 0.8em;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-transform: uppercase;
+}
+
+.footer-address {
+    font-size: 0.8em;
+    line-height: 1.6;
+    margin-bottom: 0;
+}
+
+.footer-right p {
+    font-size: 0.8em;
+    line-height: 1;
+    margin: 5px 0;
+}
+
+.footer-right strong {
+    font-weight: bold;
+}
+
+.social-icons {
+    margin-top: 15px;
+}
+
+.social-icons a {
+    margin-left: 10px;
+    display: inline-block;
+}
+
+.social-icons img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .footer-left, .footer-right {
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .footer-right {
+        margin-top: 20px;
+    }
+
+    .social-icons a {
+        margin-left: 5px;
+        margin-right: 5px;
+    }
+}
+
 
 /* Responsive adjustments */
 @media (max-width: 768px) {
@@ -155,11 +245,11 @@ footer p {
     }
 
     .studio-carousel-section {
-        height: 100vh; /* Full height on mobile screens */
+        height: 50vh; /* Smaller height on mobile */
     }
 
     .studio-carousel-section .carousel-item img {
-        height: 100vh; /* Full viewport height on mobile */
+        height: 50vh;
     }
 }
 
@@ -183,5 +273,6 @@ footer p {
         width: 100%;
     }
 }
+
 
 

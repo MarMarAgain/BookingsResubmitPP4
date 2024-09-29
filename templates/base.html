@@ -18,25 +18,33 @@
     {% endblock %}
 </head>
 <body>
+
     <!-- Navbar -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
-        <div class="container-fluid">
-            <a class="navbar-brand" href="{% url 'home' %}">Studio Booking</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav me-auto">
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'home' %}">Home</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="{% url 'studio_list' %}">Book a Studio</a>
-                    </li>
-                </ul>
-            </div>
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+        <!-- Logo/Image and Brand Name -->
+        <a class="navbar-brand d-flex align-items-center" href="{% url 'home' %}">
+            <img src="{% static 'images/DCFC.svg' %}" alt="Studio Logo" width="90" height="auto" class="d-inline-block align-text-top me-2">
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <!-- Navbar Links -->
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <!-- Move nav items to the left with ms-auto -->
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="{% url 'studio_list' %}">Book a Studio</a>
+                </li>
+            </ul>
         </div>
-    </nav>
+    </div>
+</nav>
+
 
     <!-- Page content -->
     <div class="container mt-4">
@@ -54,15 +62,50 @@
     </div>
 
     <!-- Footer -->
-    <footer class="bg-light text-center text-lg-start mt-5">
-        <div class="container p-4">
-            <p class="text-muted">&copy; 2024 Dance Cork Firkin Crane | All rights reserved.</p>
+    <footer class="footer">
+    <div class="footer-container">
+        <!-- Left side: Logo and Address -->
+        <div class="footer-left">
+            <h2 class="footer-logo">Dance Cork Firkin Crane</h2>
+            <address class="footer-address">
+                Firkin Crane,<br>
+                John Redmond Street,<br>
+                Shandon,<br>
+                Cork T23 Y584<br>
+                +353 (0)21 450 7487
+            </address>
         </div>
-    </footer>
+
+        <!-- Right side: Contact and Social Links -->
+        <div class="footer-right">
+            <p><strong>General enquiries:</strong> info@firkincrane.ie</p>
+            <p><strong>Box Office enquiries:</strong> boxoffice@firkincrane.ie</p>
+            
+            <!-- Social Icons -->
+            <div class="social-icons">
+                <a href="#" aria-label="Twitter">
+                    <img src="{% static 'images/twitter.png' %}" alt="Twitter">
+                </a>
+                <a href="#" aria-label="Instagram">
+                    <img src="{% static 'images/insta.png' %}" alt="Instagram">
+                </a>
+                <a href="#" aria-label="Facebook">
+                    <img src="{% static 'images/fb.png' %}"alt="Facebook">
+                </a>
+            </div>
+        </div>
+    </div>
+</footer>
+
 
     <!-- Bootstrap JS -->
+    
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
+    {% block extra_css %}
+    <!-- Additional scripts  -->
+    {% endblock %}
+    
     {% block extra_scripts %}
     <!-- Additional scripts  -->
     {% endblock %}
