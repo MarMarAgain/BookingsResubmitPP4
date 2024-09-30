@@ -11,13 +11,22 @@ from decimal import Decimal
 class Studio(models.Model):
     name = models.CharField(max_length=255)
     location = models.CharField(max_length=255)
+    blurb = models.TextField(max_length=150, default='Please enter a brief description of the studio')
     description = models.TextField()
+    benefits = models.TextField(
+        help_text="Comma-separated list of recommended activities for the studio (e.g. Yoga, Photography, Dance)",
+        default="Rehersal"
+    )
     hourly_rate = models.DecimalField(max_digits=10, decimal_places=2, default=20, help_text="Hourly rate for the studio")  # Fixed rate
     capacity = models.IntegerField()
     image = models.ImageField(upload_to='studios/', default='logo.png')
 
     def __str__(self):
         return self.name
+
+    def get_recommended_uses(self):
+        """Return recommended uses as a list."""
+        return self.benefits.split(',') if self.benefits else []
 
 class Booking(models.Model):
     studio = models.ForeignKey(Studio, on_delete=models.CASCADE)

@@ -2,9 +2,22 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h2>Booking Confirmation</h2>
-<p>Studio: {{ booking.studio.name }}</p>
-<p>Start Time: {{ booking.start_time }}</p>
-<p>End Time: {{ booking.end_time }}</p>
-<p>Total Cost: €{{ booking.total_cost }}</p>
+<div class="container my-5">
+    <p id="important">Thank you for your booking! <br>Please be advised that <strong>full payment is required on the day of your studio use</strong>.<br> Payments can be made via card or cash at the reception of Dance Cork Firkin Crane. </p>
+    <div class="card shadow-sm">
+        <div class="card-header bg-primary text-white">
+            <h2 class="mb-0">Your Booking Confirmation</h2>
+        </div>
+        <div class="card-body">
+            <p><strong>Studio:</strong> {{ booking.studio.name }}</p>
+            <p><strong>Start Time:</strong> {{ booking.start_time }}</p>
+            <p><strong>End Time:</strong> {{ booking.end_time }}</p>
+            <p><strong>Total Cost:</strong> €{{ booking.total_cost }}</p>
+        </div>
+        <div class="card-footer text-center">
+            <a href="/" class="btn btn-secondary">Return to Home</a>
+        </div>
+    </div>
+</div>
 {% endblock %}
+
