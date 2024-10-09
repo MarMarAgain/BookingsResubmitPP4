@@ -2,10 +2,12 @@
 from django.shortcuts import render, get_object_or_404, redirect
 from .models import Studio, Booking
 from .forms import BookingForm
-
 from datetime import datetime
 from django.utils.timezone import make_aware
 from django.utils import timezone
+from django.core.mail import send_mail
+from django.core.mail import send_mail
+from django.http import HttpResponse
 # from django.contrib.auth.decorators import login_required
 
 # from datetime import datetime, timedelta, time
@@ -55,6 +57,17 @@ def book_studio(request, studio_id):
             booking.end_time = timezone.make_aware(datetime.fromisoformat(form.cleaned_data['end_time']))
 
             booking.save()  # Now save it to the database
+
+            # Send a confirmation email
+            send_mail(
+                subject='Booking Confirmation',
+                message=f'Thank you for booking {studio.name}.'
+                        f'Your booking is confirmed for {booking.start_time} to {booking.end_time}.',
+                from_email='your-email@gmail.com',  # Sender's email
+                recipient_list=[form.cleaned_data['email']],  # The email entered in the form
+                fail_silently=False,
+            )
+
             return redirect('booking_confirmation', booking_id=booking.id)
     else:
         form = BookingForm()
@@ -65,3 +78,16 @@ def book_studio(request, studio_id):
 def booking_confirmation(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     return render(request, 'booking_confirmation.html', {'booking': booking})
+
+def send_test_email(request):
+    try:
+        send_mail(
+            'Test Email Subject',
+            'This is a test email from Django.',
+            'maryellekeating@gmail.com',  # Make sure this is your EMAIL_HOST_USER
+            ['mary@firkincrane.ie'],  # Replace with your test recipient's email
+            fail_silently=False,
+        )
+        return HttpResponse("Test email sent successfully!")
+    except Exception as e:
+        return HttpResponse(f"An error occurred: {str(e)}")
