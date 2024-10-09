@@ -1,0 +1,36 @@
+/* Ensure the image takes up half the width and maintains aspect ratio */
+.image-container {
+    width: 50%;
+    display: flex; /
+    justify-content: center;
+    align-items: center;
+}
+
+.studio-image {
+    width: 100%;
+    height: auto;
+}
+
+/* Ensure the form container takes up the remaining half of the width */
+.form-container {
+    width: 50%;
+    padding: 20px;
+}
+
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .d-flex {
+        flex-direction: column;
+    }
+
+    .image-container, .form-container {
+        width: 100%;
+    }
+
+    .studio-image {
+        max-width: 100%;
+        height: auto;
+    }
+}
+

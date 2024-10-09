@@ -1,0 +1,46 @@
+/* Ensure the image is larger and positioned to the left */
+.studio-image {
+    width: 200rem;
+    height: auto;
+}
+
+/* Flexbox container for image and details */
+.d-flex {
+    display: flex;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-md-row {
+    flex-direction: row;
+}
+
+.align-items-start {
+    align-items: flex-start;
+}
+
+/* Add spacing between image and details on medium and larger screens */
+.me-md-4 {
+    margin-right: 1.5rem;
+}
+
+.benefits {
+    list-style-type: disc;
+    font-size: 1.1rem;
+    color: white;
+    background-color: rgba(43,43,46, 0.6);
+    padding: 15px;
+    align-content: center;
+    border-radius: 15px;
+    max-width: 600px;
+    margin: 20px auto;
+}
+
+/* Responsive adjustments for smaller screens */
+@media (max-width: 768px) {
+    .studio-image {
+        width: 100%;
+    }
+}
