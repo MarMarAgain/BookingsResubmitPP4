@@ -1,0 +1,8 @@
+asgiref==3.8.1
+Django==5.1.1
+django-environ==0.11.2
+environ==1.0
+gunicorn==23.0.0
+packaging==24.1
+pillow==10.4.0
+sqlparse==0.5.1
