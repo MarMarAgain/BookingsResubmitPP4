@@ -1,0 +1,42 @@
+<!-- templates/delete_booking.html -->
+{% extends "base.html" %}
+
+{% block content %}
+<div class="container my-5">
+    <p id="important">If you wish to cancel your booking, please enter your email and the booking start time.<br>
+        Your start time should be inputted in the same format that it appears on your confirmation email:</p>
+
+    <div class="card shadow-sm">
+        <div class="card-header bg-danger text-white">
+            <h2 class="mb-0">Delete Your Booking</h2>
+        </div>
+
+        <div class="card-body">
+            <form id="delete-booking-form" method="POST" class="needs-validation" novalidate>
+                {% csrf_token %}
+                
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="start-time">Start Time (YYYY-MM-DD HH:MM:SS):</label>
+                    <input type="text" id="start-time" name="start_time" class="form-control" required>
+                </div>
+
+                <button type="submit" class="btn btn-danger btn-block mt-3">Delete Booking</button>
+            </form>
+        </div>
+
+        <div class="card-footer text-center">
+            <a href="/" class="btn btn-secondary">Return to Home</a>
+        </div>
+    </div>
+
+    {% if message %}
+        <div class="alert alert-info mt-4">{{ message }}</div>
+    {% endif %}
+</div>
+{% endblock %}
+

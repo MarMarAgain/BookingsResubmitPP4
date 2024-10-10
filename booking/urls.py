@@ -1,7 +1,7 @@
 # booking/urls.py
 
 from django.urls import path
-from .views import book_studio,booking_confirmation, studio_list, studio_detail
+from .views import book_studio,booking_confirmation, studio_list, studio_detail, delete_booking
 from django.urls import path
 
 
@@ -10,4 +10,5 @@ urlpatterns = [
     path('studios/<int:studio_id>/', studio_detail, name='studio_detail'),  # Accessible at /booking/studios/<studio_id>/
     path('studios/<int:studio_id>/book/', book_studio, name='book_studio'),  # Accessible at /booking/studios/<studio_id>/book/
     path('confirmation/<int:booking_id>/', booking_confirmation, name='booking_confirmation'),  # Accessible at /booking/confirmation/<booking_id>/,
+    path('delete-booking/',delete_booking, name='delete_booking'),
 ]

@@ -80,3 +80,26 @@ def book_studio(request, studio_id):
 def booking_confirmation(request, booking_id):
     booking = get_object_or_404(Booking, id=booking_id)
     return render(request, 'booking_confirmation.html', {'booking': booking})
+
+
+def delete_booking(request):
+    if request.method == 'POST':
+        email = request.POST.get('email')
+        start_time_str = request.POST.get('start_time')
+
+        try:
+            # Parse the start time string into a datetime object
+            start_time = timezone.datetime.strptime(start_time_str, "%Y-%m-%d %H:%M:%S")
+
+            # Try to find the booking
+            booking = Booking.objects.get(email=email, start_time=start_time)
+            booking.delete()  # Delete the booking
+            message = "Booking deleted successfully."
+        except Booking.DoesNotExist:
+            message = "Booking not found. Please check your email and start time."
+        except ValueError:
+            message = "Invalid date format. Please use YYYY-MM-DD HH:MM:SS."
+
+        return render(request, 'delete_booking.html', {'message': message})
+
+    return render(request, 'delete_booking.html')
