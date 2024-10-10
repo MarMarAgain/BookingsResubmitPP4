@@ -93,13 +93,36 @@ def delete_booking(request):
 
             # Try to find the booking
             booking = Booking.objects.get(email=email, start_time=start_time)
-            booking.delete()  # Delete the booking
-            message = "Booking deleted successfully."
+
+            # Retrieve the studio associated with the booking
+            studio = booking.studio  # Adjust this line based on your Booking model definition
+
+            # Delete the booking
+            booking.delete()
+
+            # Send a confirmation email
+            send_mail(
+                subject='Booking Cancellation',
+                message=f'Dear Artist,\n\n'
+                        f'This is to confirm that you have cancelled your booking for {studio.name} on {start_time}.\n'
+                        f'If this is in error, please contact our reception on (021) 450 7487.\n\n'
+                        f'We hope to welcome you back another time.\n\n'
+                        f"Until then!\n",
+                from_email=env('DEFAULT_FROM_EMAIL'),
+                recipient_list=[email],
+                fail_silently=False,
+            )
+
+            # Set a success message to be displayed
+            message = "Booking successfully deleted."
+
         except Booking.DoesNotExist:
             message = "Booking not found. Please check your email and start time."
         except ValueError:
-            message = "Invalid date format. Please use YYYY-MM-DD HH:MM:SS."
+            message = ("Invalid date format. Please use YYYY-MM-DD HH:MM:SS."
+                       " Please see your confirmation email for reference.")
 
+        # Render the delete_booking.html with the message
         return render(request, 'delete_booking.html', {'message': message})
 
     return render(request, 'delete_booking.html')

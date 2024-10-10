@@ -1,116 +1,138 @@
-# Booking Studio Website
+# Studio Booking Website
 
-This is the main marketing website for Code Institute. It is designed to be responsive and accessible on a range of devices, making it easy to navigate for potential students and partners.
+This project is built as an addition to the already established **Dance Cork Firkin Crane** website, providing users with a streamlined method to book studio space. The project is designed to offer an accessible and user-friendly booking system, allowing visitors to view studio details,  and make bookings efficiently. The system fits seamlessly within the existing branding and structure of the main website.
 
 ## User Experience (UX)
 
 ### User Stories
 
 #### First Time Visitor Goals
-- **As a First Time Visitor,** I want to easily understand the main purpose of the site and learn more about the organisation.
-- **As a First Time Visitor,** I want to be able to easily navigate throughout the site to find content.
-- **As a First Time Visitor,** I want to look for testimonials to understand what their users think of them and see if they are trusted. I also want to locate their social media links to see their followings on social media to determine how trusted and known they are.
+- **As a First Time Visitor,** I want to quickly understand the purpose of the site and how to book studio space.
+- **As a First Time Visitor,** I want to be able to navigate the site easily to view available studios.
+- **As a First Time Visitor,** I want to receive clear feedback if the studio is unavailable at my chosen time.
 
 #### Returning Visitor Goals
-- **As a Returning Visitor,** I want to find information about coding challenges.
-- **As a Returning Visitor,** I want to find the best way to get in contact with the organisation with any questions I may have.
-- **As a Returning Visitor,** I want to find community links.
+- **As a Returning Visitor,** I want to delete a booking.
+- **As a Returning Visitor,** I want to find the most efficient way to make new bookings without having to create a user profile.
 
 #### Frequent User Goals
-- **As a Frequent User,** I want to check to see if there are any newly added challenges or hackathons.
-- **As a Frequent User,** I want to check to see if there are any new blog posts.
-- **As a Frequent User,** I want to sign up for the Newsletter so that I am emailed any major updates and/or changes to the website or organisation.
+- **As a Frequent User,** I want to easily assess if a different studio meets my needs.
+- **As a Frequent User,** I want a simple way to receive confirmation after booking a studio.
+- **As a Frequent User,** I want the booking process to be quick and straightforward, minimizing any repetitive steps.
 
 ## Design
 
 ### Colour Scheme
-The two main colours used are Code Institute red and white.
+The colour scheme is designed to match **Dance Cork Firkin Crane's** branding, ensuring a cohesive look and feel throughout the site.
 
 ### Typography
-The Montserrat font is the main font used throughout the whole website with Sans Serif as the fallback font in case for any reason the font isn't being imported into the site correctly. Montserrat is a clean font used frequently in programming, making it both attractive and appropriate.
+Grotesque font is used across the site to maintain a modern, clean, and professional appearance, consistent with the main Dance Cork Firkin Crane website. Sans Serif is used as a fallback in case the font fails to load.
 
 ### Imagery
-Imagery is important. The large, background hero image is designed to be striking and catch the user's attention. It also has a modern, energetic aesthetic.
+Images of the studios are integrated into the site to help users assess the space visually before making a booking. These images, along with detailed descriptions, assist in providing a clear understanding of what each studio offers.
 
 ### Wireframes
-- **Home Page Wireframe** - View
-- **Mobile Wireframe** - View
-- **Contact Us Page Wireframe** - View
+- **Booking Page Wireframe** - View
+- **Mobile Version Wireframe** - View
+- **Confirmation Page Wireframe** - View
 
 ## Features
-- Responsive on all device sizes
-- Interactive elements
+
+- **Studio Booking System:** Users can view the available studios, and make bookings directly on the site.
+- **Booking Management:** Users can delete their bookings by providing their email and the booking's start date and time.
+- **No User Profiles Required:** To streamline the booking process and attract new users, no account or profile creation is needed for booking.
+- **Feedback on Availability:** If a studio is unavailable due to an overlap with an existing booking, users receive immediate feedback and can adjust their booking accordingly.
+- **Responsive Design:** The platform is fully responsive across different device sizes and screen resolutions.
 
 ## Technologies Used
 
-### Languages Used
+### Languages
 - HTML5
 - CSS3
+- JavaScript
+- Python (with Django)
 
-### Frameworks, Libraries & Programs Used
-- **Bootstrap 4.4.1:** Bootstrap was used to assist with the responsiveness and styling of the website.
-- **Hover.css:** Used on the Social Media icons in the footer to add a float transition when hovered over.
-- **Google Fonts:** Used to import the 'Titillium Web' font into the style.css file, which is used on all pages throughout the project.
-- **Font Awesome:** Used throughout the website to add icons for aesthetic and UX purposes.
-- **jQuery:** Included with Bootstrap for a responsive navbar and used for smooth scrolling functionality in JavaScript.
-- **Git:** Utilized for version control by committing to Git and pushing to GitHub via the Gitpod terminal.
-- **GitHub:** Used to store the project’s code after being pushed from Git.
-- **Photoshop:** Used for logo creation, image resizing, and photo editing.
-- **Balsamiq:** Used for wireframing during the design process.
+### Frameworks, Libraries & Programs
+- **Bootstrap 4.4.1:** Used for responsive design and styling across all devices.
+- **Font Awesome:** Integrated for icons that enhance the user interface and improve navigation.
+- **jQuery:** Utilized for interactive elements, including smooth scrolling and dynamic feedback.
+- **Git:** Used for version control to track changes and updates during development.
+- **GitHub:** Repository hosting and deployment of the live version of the project.
+- **Photoshop:** For editing studio images and creating visual assets for the site.
+- **Figma:** Used to create wireframes that guided the design and development process.
 
 ## Testing
-The W3C Markup Validator and W3C CSS Validator services were used to validate every page of the project to ensure there were no syntax errors.
 
-- [W3C Markup Validator - Results](#)
-- [W3C CSS Validator - Results](#)
+The W3C Markup Validator and W3C CSS Validator were used to ensure all HTML and CSS files were free from syntax errors.
 
-### Testing User Stories from User Experience (UX) Section
+- [W3C Markup Validator Results](#)
+- [W3C CSS Validator Results](#)
+
+### Testing User Stories from UX Section
 
 #### First Time Visitor Goals
-- Upon entering the site, users are automatically greeted with a clean and easily readable navigation bar to go to the page of their choice. Underneath, there is a Hero Image with Text and a "Learn More" Call to Action button.
-- The main points are made immediately with the hero image.
-- The user has two options: click the call to action buttons or scroll down, both of which lead to the same place to learn more about the organisation.
+- Users are greeted with a clear navigation bar allowing them to explore studio options. 
+- Descriptions and images of each studio are easily accessible, and users can view details and book directly from the site.
+- If a studio is unavailable at a desired time, users receive feedback, helping them to adjust their plans.
 
 #### Returning Visitor Goals
-- These are clearly shown in the banner message, directing them to a page with another hero image and call to action.
-- The navigation bar clearly highlights the "Contact Us" Page, where they can fill out the form or message the organisation on social media.
+- Returning visitors can quickly delete their bookings by providing their email and booking details.
+- The user-friendly layout allows returning visitors to quickly navigate to the booking form or delete their existing booking.
 
 #### Frequent User Goals
-- The user would already be comfortable with the website layout and can easily click the banner message for newly added challenges or blog posts.
-- At the bottom of every page, there is a footer prompting the user to "Subscribe to our Newsletter".
+- Frequent users benefit from the straightforward booking process, without needing to create a profile, making it efficient for repeat bookings.
+- A confirmation email is sent after each booking to ensure the user knows their booking was successful.
 
 ## Further Testing
-- The website was tested on Google Chrome, Internet Explorer, Microsoft Edge, and Safari.
-- The website was viewed on various devices such as Desktop, Laptop, iPhone7, iPhone8, and iPhoneX.
-- A large amount of testing was done to ensure all pages were linking correctly.
-- Friends and family members were asked to review the site and documentation to identify any bugs or user experience issues.
+- The website was tested on multiple browsers including Google Chrome, Firefox, Safari, and Microsoft Edge.
+- It was also viewed on different devices such as desktop computers, laptops, and various smartphones (iPhone and Android) to ensure the responsiveness and functionality.
+- Feedback was gathered from users familiar with the Dance Cork Firkin Crane website to ensure the new system aligned with existing user expectations.
 
 ### Known Bugs
-- On some mobile devices, the Hero Image pushes the size of the screen out more than any of the other content on the page, leading to a white gap on the right side of the footer and navigation bar.
-- In Microsoft Edge and Internet Explorer, all navbar links are pushed upwards when hovered over.
+- On some tablet devices, images may adjust abnormally, which may affect user experience.
 
 ## Deployment
 
-### GitHub Pages
-The project was deployed to GitHub Pages using the following steps:
-1. Log in to GitHub and locate the GitHub Repository.
-2. At the top of the Repository (not the top of the page), locate the "Settings" Button.
-3. Scroll down the Settings page until you locate the "GitHub Pages" Section.
-4. Under "Source", click the dropdown called "None" and select "Master Branch". The page will automatically refresh.
-5. Scroll back down to locate the published site link in the "GitHub Pages" section.
+### Heroku Deployment
 
-### Forking the GitHub Repository
-By forking the GitHub Repository, we create a copy of the original repository in our GitHub account to view and/or make changes without affecting the original repository:
-1. Log in to GitHub and locate the GitHub Repository.
-2. At the top of the Repository, locate the "Fork" Button.
-3. You should now have a copy of the original repository in your GitHub account.
+The project was deployed to Heroku via GitHub using the following steps:
 
-### Making a Local Clone
-1. Log in to GitHub and locate the GitHub Repository.
-2. Under the repository name, click "Clone or download".
-3. To clone using HTTPS, copy the link.
-4. Open Git Bash.
-5. Change the current working directory to where you want the cloned directory.
-6. Type `git clone`, and then paste the URL:
+1. **Log in to Heroku:** Open your Heroku account.
+2. **Create a New App:** Click on "New" and select "Create new app".
+3. **Connect to GitHub:** In the app dashboard, navigate to the "Deploy" tab and find the "Deployment method" section. Select "GitHub".
+4. **Authorize GitHub:** If prompted, authorize Heroku to access your GitHub account.
+5. **Search for Repository:** Enter the name of the GitHub repository containing your project and click "Search".
+6. **Connect Repository:** Once found, click on "Connect" to link the repository to your Heroku app.
+7. **Enable Automatic Deploys (optional):** If you want Heroku to automatically deploy new commits to the main branch, enable the option for automatic deploys.
+8. **Deploy the App:** Click on "Deploy Branch" to manually deploy the current state of the main branch.
+9. **View Your App:** After deployment, you can view your app by clicking on the "Open App" button.
+
+
+### Forking the Repository
+To make a copy of this project for further development:
+1. Log in to GitHub and locate the repository.
+2. Click the "Fork" button at the top of the repository.
+3. A copy will be created in your GitHub account.
+
+### Cloning the Repository
+1. Log in to GitHub and locate the repository.
+2. Click the "Code" button and copy the URL.
+3. Open your terminal and navigate to your chosen directory.
+4. Run the following command:
    ```bash
-   git clone https://github.com/YOUR-USERNAME/YOUR-REPOSITORY
+   git clone https://github.com/MarMarAgain/BookingsResubmitPP4
+
+## Credits
+
+- **Content:** Descriptions of the studios were provided by Dance Cork Firkin Crane.
+- **Images:** Studio images were taken by Dance Cork Firkin Crane.
+- **Code:** Developed by MarMarAgain .
+- **Design:** The overall design was crafted to align with the existing branding of Dance Cork Firkin Crane, ensuring a seamless user experience.
+- **User Testing:** Special thanks to friends and family who provided feedback during the testing phase to help refine the booking system.
+- **Tools Used:** 
+  - **PYCharm:** For writing and editing the code.
+  - **GitHub:** For version control and project management.
+  - **Bootstrap:** For responsive design and layout components.
+  - **Font Awesome:** For enhancing user interface with icons.
+  - **Photoshop:** For image editing and graphic design.
+- **Inspiration:** The design and functionality of the booking system were inspired by user-friendly practices from various booking platforms in the arts and performance industry.
