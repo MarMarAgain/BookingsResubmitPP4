@@ -54,7 +54,7 @@ def book_studio(request, studio_id):
             booking.start_time = timezone.make_aware(datetime.fromisoformat(form.cleaned_data['start_time']))
             booking.end_time = timezone.make_aware(datetime.fromisoformat(form.cleaned_data['end_time']))
 
-            booking.save()  # Now save it to the database
+            booking.save()  # Save it to the database
 
             # Send a confirmation email
             send_mail(
@@ -95,7 +95,7 @@ def delete_booking(request):
             booking = Booking.objects.get(email=email, start_time=start_time)
 
             # Retrieve the studio associated with the booking
-            studio = booking.studio  # Adjust this line based on your Booking model definition
+            studio = booking.studio
 
             # Delete the booking
             booking.delete()
